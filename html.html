@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>❤️❤️</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #740eda, #ff22e9);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      margin-bottom: 40px;
+      color: #fff;
+    }
+    .btn {
+      font-size: 1.2rem;
+      padding: 12px 30px;
+      margin: 0 15px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .sim {
+      background: #00ff08;
+      color: white;
+    }
+    .sim:hover {
+      background: #00ff0d;
+    }
+    .nao {
+      background: #ff0000;
+      color: white;
+      position: absolute;
+    }
+    #mensagem {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      color: #fff;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Vou ganhar um abraço?</h1>
+  <div>
+    <button class="btn sim" onclick="aceitou()">SIM</button>
+    <button id="btnNao" class="btn nao" onmouseover="foge()">NÃO</button>
+  </div>
+  <div id="mensagem">❤️ Você fez a melhor escolha!  ❤️</div>
+
+  <script>
+    function foge() {
+      const btn = document.getElementById('btnNao');
+      const maxX = window.innerWidth - btn.offsetWidth;
+      const maxY = window.innerHeight - btn.offsetHeight;
+      btn.style.left = Math.random() * maxX + 'px';
+      btn.style.top  = Math.random() * maxY + 'px';
+    }
+    function aceitou() {
+      document.getElementById('mensagem').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
